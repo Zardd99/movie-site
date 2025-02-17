@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@layer theme, base, utilities;
+
+@layer utilities {
+  .grid-cols-auto-fit-minmax {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-light transition-colors duration-500 ease-in;
+  }
+
+  body,
+  button,
+  input {
+    @apply font-display text-base tracking-tighter leading-[0.9];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-semibold leading-[0.9] tracking-tighter;
+  }
+
+  p {
+    @apply tracking-tighter;
+  }
+
+  img {
+    @apply block max-w-full select-none;
+  }
+
+  button {
+    @apply inline-block outline-none p-0 border-0 bg-none cursor-pointer text-inherit;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  a {
+    @apply transition-colors duration-500 ease-in text-light no-underline;
+  }
+}
+
+@theme {
+  --color-light: #f1f5f9;
+  --color-dark: #020617;
+  --color-indigo-500: #6366f1;
+  --color-slate-400: #94a3b8;
+  --color-slate-200: #e2e8f0;
+  --color-gray: rgba(255, 255, 255, 0.1);
+  --color-gradient: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+
+  --font-display: "Poppins", "sans-serif";
+  --box-shadow: 0 0 0 2px #666;
+
+  --animate-fadeIn: fadeIn 0.3s ease-out-forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
