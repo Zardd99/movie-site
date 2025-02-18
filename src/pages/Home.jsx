@@ -82,7 +82,11 @@ const Home = () => {
             {movies.map(
               (movie) =>
                 movie.title.toLowerCase().startsWith(searchQuery) && (
-                  <MovieCard key={movie.id} movie={movie} />
+                  <MovieCard
+                    key={movie.id}
+                    movie={movie}
+                    isHistoryPage={false}
+                  />
                 )
             )}
           </div>

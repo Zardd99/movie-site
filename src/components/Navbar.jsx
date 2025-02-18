@@ -19,6 +19,12 @@ const Navbar = () => {
           >
             Favorites
           </Link>
+          <Link
+            to="/History"
+            className="nav-link text-base p-2 md:py-2 md:px-4 hover:bg-slate-500"
+          >
+            History
+          </Link>
         </div>
       </nav>
     </div>

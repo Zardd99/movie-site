@@ -26,7 +26,9 @@ const Favorites = () => {
   }
   return (
     <div className="favorite-empty text-center px-8 py-16 bg-[255,255,255,0.05] rounded-xl mx-auto my-8 max-w-[600px]">
-      <h2 className="mb-4 text-[2rem] text-red-500">No favorite movies yet</h2>
+      <h2 className="mb-4 text-[2rem] text-slate-600">
+        No favorite movies yet
+      </h2>
       <p className="text-[#999] text-xl leading-7">
         Start adding Movies fav...
       </p>
