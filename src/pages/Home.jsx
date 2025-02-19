@@ -17,7 +17,6 @@ const Home = () => {
         setMovies(popularMovies);
       } catch (err) {
         console.log(err);
-        console.log("API Key:", import.meta.env.VITE_API_KEY);
         setError("Failed to load movies...");
       } finally {
         setLoading(false);
