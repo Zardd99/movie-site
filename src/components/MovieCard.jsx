@@ -36,7 +36,7 @@ const MovieCard = ({ movie, isHistoryPage = false }) => {
   return (
     <div className="movie-card group relative rounded-lg overflow-hidden bg-dark transition-[transform] duration-200 h-full flex flex-col hover:transform-[transitionY(-5px)] text-[0.9rem] md:text-base max-w-[500px]">
       <div
-        className="movie-poster relative aspect-[2/3] w-full"
+        className="movie-poster relative aspect-[2/3] w-full active:opacity-80"
         onClick={handleHistoryClick}
       >
         <img
@@ -50,7 +50,20 @@ const MovieCard = ({ movie, isHistoryPage = false }) => {
               className="History absolute top-4 left-4 text-light text-xl md:text-2xl p-2 bg-dark rounded-[50%] w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-[background-color] duration-200 hover:bg-dark active:text-red-400"
               onClick={handleRemoveHistories}
             >
-              ❌
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           )}
         </div>
@@ -70,7 +83,20 @@ const MovieCard = ({ movie, isHistoryPage = false }) => {
             }text-light text-xl md:text-2xl p-2 bg-dark rounded-[50%] w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-[background-color] duration-200 hover:bg-dark active:text-red-400`}
             onClick={handleClick}
           >
-            {favorite ? "❤️" : "🤍"}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className={`size-6 ${favorite ? "fill-light" : ""}`}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+              />
+            </svg>
           </button>
         </div>
       </div>

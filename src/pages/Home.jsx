@@ -1,9 +1,8 @@
 import "../css/index.css";
-
 import MovieCard from "../components/MovieCard";
-
 import { useState, useEffect } from "react";
 import { searchMovies, getPopularMovies } from "../services/api.js";
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -38,7 +37,6 @@ const Home = () => {
     } catch (err) {
       console.log(err);
       setError("Failed to search movies...");
-      setLoading(false);
     } finally {
       setLoading(false);
     }
@@ -47,7 +45,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="home px-0 py-4 sm:py-8 sm:px-0 w-full box-border">
+      <div className="home px-0 py-4 sm:py-8 sm:px-0 w-full box-border mt-20">
         <form
           onSubmit={handleSearch}
           className="search-form max-w-[600px] mb-4 sm:mt-0 sm:mb-auto mx-8 flex gap-4 px-4 py-0 box-border"
@@ -57,10 +55,12 @@ const Home = () => {
             placeholder="Search for movies..."
             className="search-input flex-1 px-4 py-3 rounded-sm bg-slate-800 text-light text-base focus:outline-0 focus:box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);"
             value={searchQuery}
+            autoFocus
             onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
           />
           <button
             type="submit"
+            autoFocus
             className="search-button px-6 py-3 bg-slate-600 text-light rounded-sm font-[500] transition-colors duration-200 whitespace-nowrap hover:bg-slate-500"
           >
             Search

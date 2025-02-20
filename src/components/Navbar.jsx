@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar bg-dark p-4 md:px-8 md:py-4 flex justify-between items-center">
+    <div className="relative">
+      <nav className="navbar bg-dark w-full p-4 md:px-8 md:py-4 flex justify-between items-center fixed top-0 left-0 z-[999]">
         <div className="navbar-brand text-xl md:text-2xl font-bold">
           <Link to="/">Movie App</Link>
         </div>
