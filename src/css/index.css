@@ -11,13 +11,24 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   body {
-    @apply bg-dark text-light transition-colors duration-500 ease-in;
+    @apply bg-light dark:bg-dark  text-dark dark:text-light transition-colors duration-300 ease-in font-display;
   }
 
-  body,
+  .dark body {
+    --color-light: #020617;
+    --color-dark: #f1f5f9;
+    --color-slate-700: oklch(0.869 0.022 252.894);
+    @apply bg-dark text-light;
+  }
+
   button,
   input {
     @apply font-display text-base tracking-tighter leading-[0.9];
@@ -35,12 +46,13 @@
     @apply tracking-tighter;
   }
 
-  img {
+  img,
+  svg {
     @apply block max-w-full select-none;
   }
 
   button {
-    @apply inline-block outline-none p-0 border-0 bg-none cursor-pointer text-inherit;
+    @apply inline-block outline-none p-0 border-0 bg-none cursor-pointer  text-inherit;
   }
 
   ul {
@@ -48,17 +60,24 @@
   }
 
   a {
-    @apply transition-colors duration-500 ease-in text-light no-underline;
+    @apply transition-colors duration-500 ease-in text-dark no-underline;
+  }
+
+  .dark a {
+    @apply text-light;
+  }
+
+  hr {
+    @apply transition-all duration-500 ease-in border border-dark dark:border-light;
   }
 }
 
 @theme {
   --color-light: #f1f5f9;
   --color-dark: #020617;
-  --color-indigo-500: #6366f1;
-  --color-slate-400: #94a3b8;
-  --color-slate-200: #e2e8f0;
-  --color-gray: rgba(255, 255, 255, 0.1);
+  --color-button: #4acfee;
+  --shadow-button: 0 0 10px #4acfee;
+  --shadow-light: 0 0 10px #f1f5f9;
   --color-gradient: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.1),
@@ -71,18 +90,4 @@
   );
 
   --font-display: "Poppins", "sans-serif";
-  --box-shadow: 0 0 0 2px #666;
-
-  --animate-fadeIn: fadeIn 0.3s ease-out-forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
