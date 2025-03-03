@@ -165,28 +165,6 @@ const Home = () => {
           </>
         )}
       </div>
-      <div className="group fixed flex items-center justify-center rounded-2xl bottom-10 right-10 bg-light w-[60px] h-[60px] transition-all duration-300 hover:scale-110 hover:bg-light/90 z-[999]">
-        <Link to="/" className="flex items-center justify-center w-full h-full">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-6 text-dark transition-transform duration-300 group-hover:translate-x-1"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-            />
-          </svg>
-        </Link>
-        <p className="hidden group-hover:flex items-center gap-2 absolute right-[100%] top-1/2 -translate-y-1/2 bg-light text-dark px-4 py-2 rounded-lg shadow-md mr-2 transition-opacity duration-300 opacity-0 group-hover:opacity-100 whitespace-nowrap">
-          Go Back To Portfolio
-          <span className="absolute right-[-8px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-light"></span>
-        </p>
-      </div>
     </>
   );
 };
