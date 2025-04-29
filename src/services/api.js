@@ -1,6 +1,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
+// Trending API
 export const getTrendingMovies = async () => {
   try {
     const response = await fetch(
@@ -21,6 +22,7 @@ export const getTrendingMovies = async () => {
   }
 };
 
+//Popular API
 export const getPopularMovies = async () => {
   try {
     const response = await fetch(
@@ -41,6 +43,7 @@ export const getPopularMovies = async () => {
   }
 };
 
+// Search API
 export const searchMovies = async (query) => {
   try {
     const response = await fetch(
