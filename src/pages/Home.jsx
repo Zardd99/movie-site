@@ -9,8 +9,6 @@ import {
   getTrendingMovies,
 } from "../services/api";
 
-import { Link } from "react-router-dom";
-
 import "swiper/css";
 import "swiper/css/scrollbar";
 const Home = () => {
